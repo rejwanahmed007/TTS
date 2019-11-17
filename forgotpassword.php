@@ -34,7 +34,7 @@
 		<div style="background-color: rgb(51,153,153); background-size: 100% 100% ; width: 100%; height:100px;">
 			<table  style="border-color: rgb(1,1,1); ">
 				<tr>
-					<td width="100%"><a href="index.php"><img src="/images/tts.png" height="95px" width="300px"></a></td>
+					<td width="100%"><a href="index.php"><img src="../images/tts.png" height="95px" width="300px"></a></td>
 					<td width="10%"><a href="dashboard.php"><h3>Dashboard</h3></td></a>
 					<td></td>
 					
@@ -54,7 +54,7 @@
 		<div style="background-color: rgb(51,153,153); background-size: 100% 100% ; width: 100%; height:100px;">
 			<table  style="border-color: rgb(1,1,1); ">
 				<tr>
-					<td width="100%"><a href="index.php"><img src="/images/tts.png" height="95px" width="300px"></a></td>
+					<td width="100%"><a href="index.php"><img src="../images/tts.png" height="95px" width="300px"></a></td>
 					<td width="10%"><a href="index.php"><h3>Home</h3></td></a>
 					<td></td>
 					<td width="10%"><a href="register.php"><h3>Register</h3></td></a>

@@ -44,7 +44,7 @@
 		<div style="background-color: rgb(51,153,153); background-size: 100% 100% ; width: 100%; height:100px;">
 			<table  style="border-color: rgb(1,1,1); ">
 				<tr>
-					<td width="100%"><a href="index.php"><img src="/images/tts.png" height="95px" width="300px"></a></td>
+					<td width="100%"><a href="index.php"><img src="../images/tts.png" height="95px" width="300px"></a></td>
 					<td width="10%"><a href="dashboard.php"><h3>Dashboard</h3></td></a>
 					<td></td>
 					
@@ -61,7 +61,7 @@
 			
 		</div>
 		<div>
-			<img src="/images/tts4.png" style="width: 100%">
+			<img src="../images/tts4.png" style="width: 100%">
 		</div>
 		<div>
 			<table border="1.0" style="width: 100%; background-color: rgb(143, 215, 240)">
@@ -82,33 +82,33 @@
 				<table border="0">
 					<tr>
 						<td width="150px">Name  </td>
-						<td><input type="text" name="name">></td>
+						<td><input type="text" name="name"></td>
 					</tr>
 					
 					<tr>
 						<td  width="150px">Email ID  </td>
-						<td><input type="text" name="email">></td>
+						<td><input type="text" name="email"></td>
 					</tr>
 					<tr>
 						<td  width="150px">Mobile No. </td>
-						<td><input type="text" name="mobile">></td>
+						<td><input type="text" name="mobile"></td>
 					</tr>
 					<tr>
 						<td  width="150px">Designation </td>
-						<td><input type="text" name="designation">></td>
+						<td><input type="text" name="designation"></td>
 					</tr>
 					
 					<tr>
 						<td  width="150px">Salary </td>
-						<td><input type="text" name="salary">></td>
+						<td><input type="text" name="salary"></td>
 					</tr>
 					<tr>
 						<td  width="150px">Commission </td>
-						<td><input type="text" name="commission">></td>
+						<td><input type="text" name="commission"></td>
 					</tr>
 					<tr>
 						<td  width="150px">Address </td>
-						<td><input type="text" name="address">></td>
+						<td><input type="text" name="address"></td>
 					</tr>
 				</table>
 				<table border="0">

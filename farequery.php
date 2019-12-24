@@ -66,7 +66,7 @@
 				<tr style="height: 30px">
 					<td width="20%" ><a href="updateprofile.php" >Update Personal Info</a></td>
 					<td  width="15%"><a href="changepassword.php">Change Password</a></td>
-					<td width="15%"><a href=updatefair.php">Update Fare Info</a></td>
+					<td width="15%"><a href="updatefair.php">Employee Info</a></td>
 					<td width="15%"><a href="updatetrain.php">Update Train Info</a></td>
 					<td width="15%"><a href="finance.php">Financial Assessment</a></td>
 					<td width="20%"><a href="feedback.php">Passenger Feedback</a></td>

@@ -1,49 +1,37 @@
 <?php
-	
-	
+require_once('db/functions.php');
 if(isset($_REQUEST['login']))
 {
 	$email= $_REQUEST['email'];
 	$password= $_REQUEST['password'];
 	if (empty($email)==true || empty($password)==true)
 	{
+
 		header('location: index.php');
 		//echo "unsuccessful";
 	}
 	else
 	{
-		$data = simplexml_load_file('logininfo.xml');
-	     for ($i=0; $i < count($data->user); $i++) 
-	     {
-	         if ($data->user[$i]->email == $email && $data->user[$i]->password == $password) 
-	         {
-		          $userinfo=$data->user[$i];
-		          if($userinfo->user_type=="Admin")
-		         {
-			         $datas = simplexml_load_file('employee.xml');
-                     for ($j=0; $j < count($datas->employee); $j++)
-                     { 
-    	                 if ($datas->employee[$j]->email == $email) 
-    	                 {
+		$user = validate($email, $password);
+		if(count($user) > 0)
+		{
+			if($user['usertype']=="Admin")
+			{
+				$employee = employee($user['email']);
+				$employee = json_encode($employee);
+				setcookie("user", $employee, time()+3600, "/");
+				header('location: dashboard.php');
+			}
+			else
+			{
+				header('location: index.php');
+			}
+			
 
-    		                 $employeeinfo=$datas->employee[$j];
-    		                 //setcookie("username",serialize($employeeinfo) , time()+3600, "/");
-    		                 //setcookie("username", $employeeinfo, time()+3600, "/");
-    		                 setcookie("username", $email, time()+3600, "/");
-			                 header('location: dashboard.php');
-
-    	                 }
-                     }
-    
-		         }
-		        else
-		         {
-			     header('location: others.php');
-		         }
-	        }
-         }
+		}else{
+				header('location: index.php');
+			}
 		
-		echo "invalid email or password";
 	}
 }
 else{header('location: index.php');}

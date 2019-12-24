@@ -1,6 +1,6 @@
 <?php
-    
-    if(isset($_COOKIE['username']))
+    require_once('db/db.php');
+    if(isset($_COOKIE['user']))
     {
         header('location: dashboard.php');
     }
@@ -10,31 +10,11 @@
 <html>
     <head>
         <title>Train Ticketing System</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="validation/script.js"></script>
     </head>
     <body>
-        <style>
         
-        a:link {
-        color: green;
-        background-color: transparent;
-        text-decoration: none;
-        }
-        a:visited {
-        color: black;
-        background-color: transparent;
-        text-decoration: none;
-        }
-        a:hover {
-        color: grey;
-        background-color: transparent;
-        text-decoration: none;
-        }
-        a:active {
-        color: yellow;
-        background-color: transparent;
-        text-decoration: none;
-        }
-        </style>
         <div style="background-color: rgb(51,153,153); background-size: 100% 100% ; width: 100%; height:100px;">
             <table  style="border-color: rgb(1,1,1); ">
                 <tr>
@@ -43,11 +23,11 @@
                     <td></td>
                     <td width="10%"><a href="register.php"><h3>Register</h3></td></a>
                     <td></td>
-                    <td width="300px%"><a href="verify_ticket.php"><h3>Verify_Ticket</h3></td></a>
+                    <td width="300px%"><a href="verify_ticket.php"><h3>Verify&nbsp;Ticket</h3></td></a>
                     <td></td>
-                    <td width="10%"><a href="farequery.php"><h3>Fare_Query</h3></td></a>
+                    <td width="10%"><a href="farequery.php"><h3>Fare&nbsp;Query</h3></td></a>
                     <td></td>
-                    <td width="10%"><a href="contact.php"><h3>Contact_Us</h3></td></a>
+                    <td width="10%"><a href="contact.php"><h3>Contact&nbsp;Us</h3></td></a>
                 </tr>
             </table>
             
@@ -61,12 +41,12 @@
                 <table border="0">
                     <tr>
                         <td><font color="black" style="font-size: 20px"><b>Email</b></font></td>
-                        <td><input type="text" name="email" style="font-size: 15px" placeholder="example@live.com"></td>
+                        <td><input type="text" id="email" name="email" style="font-size: 15px" placeholder="example@live.com"></td>
                     </tr>
                     <tr>
                         <td><font color="black" style="font-size: 20px"><b>Password</b></font></td>
                         
-                        <td><input type="password" name="password" style="font-size: 15px" placeholder="********"></td>
+                        <td><input type="password" id="password" name="password" style="font-size: 15px" placeholder="********"></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -78,7 +58,7 @@
                 <hr>
                 <table border="0">
                     <tr>
-                        <td><input type="submit" name="login" value="Login" style="font-size: 15px"></td>
+                        <td><input type="submit" name="login" onclick="f1()" value="Login" style="font-size: 15px"></td>
                         <td><a href="register.php">Register</a></td>
                     </tr>
                 </table>
@@ -98,6 +78,21 @@
             </table>
         </form>
     </div>
+    <script type="text/javascript">
+        function f1()
+        {
+            var email = IsEmailValid(document.getElementById('email').value);
+            if(!email)
+            {
+                alert("Invalid Email");
+            }
+            if(!HasSpace(document.getElementById('password').value))
+            {
+                alert("Invalid Password, space is not allowed");
+            }
+
+        }
+    </script>
 </body>
 </html>
 <?php       

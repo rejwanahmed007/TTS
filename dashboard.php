@@ -1,46 +1,19 @@
 <?php
 	
-	if(isset($_COOKIE['username'])){
+	if(isset($_COOKIE['user'])){
+	$GLOBALS['$user']  = json_decode($_COOKIE['user']);
+	
 		
-		//$employeeinfo=unserialize($_COOKIE['username']);
-		$datas = simplexml_load_file('employee.xml');
-		for ($j=0; $j < count($datas->employee); $j++)
-		{
-			if ($datas->employee[$j]->email == $_COOKIE['username'])
-			{
-				$GLOBALS['$employeeinfo'] = $datas->employee[$j];
-			}
-		}
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
 		<title>Dashboard</title>
+		<script type="text/javascript" src="validation/script.js"></script>
 	</head>
 	<body>
-		<style>
-			
-			a:link {
-			color: green;
-			background-color: transparent;
-			text-decoration: none;
-			}
-			a:visited {
-			color: black;
-			background-color: transparent;
-			text-decoration: none;
-			}
-			a:hover {
-			color: grey;
-			background-color: transparent;
-			text-decoration: none;
-			}
-			a:active {
-			color: yellow;
-			background-color: transparent;
-			text-decoration: none;
-			}
-		</style>
+		
 		<div style="background-color: rgb(51,153,153); background-size: 100% 100% ; width: 100%; height:100px;">
 			<table  style="border-color: rgb(1,1,1); ">
 				<tr>
@@ -48,11 +21,11 @@
 					<td width="10%"><a href="dashboard.php"><h3>Dashboard</h3></td></a>
 					<td></td>
 					
-					<td width="300px%"><a href="verify_ticket.php"><h3>Verify_Ticket</h3></td></a>
+					<td width="300px%"><a href="verify_ticket.php"><h3>Verify&nbsp;Ticket</h3></td></a>
 					<td></td>
-					<td width="10%"><a href="farequery.php"><h3>Fare_Query</h3></td></a>
+					<td width="10%"><a href="farequery.php"><h3>Fare&nbsp;Query</h3></td></a>
 					<td></td>
-					<td width="10%"><a href="contact.php"><h3>Contact_Us</h3></td></a>
+					<td width="10%"><a href="contact.php"><h3>Contact&nbsp;Us</h3></td></a>
 					<td></td>
 					
 					<td width="10%"><a href="logout.php"><h3>Logout</h3></td></a>
@@ -67,9 +40,9 @@
 			<table border="1.0" style="width: 100%; background-color: rgb(143, 215, 240)">
 				<tr style="height: 30px">
 					<td width="20%" ><a href="updateprofile.php" >Update Personal Info</a></td>
-				    <td  width="15%"><a href="changepassword.php">Change Password</a></td>
-				    <td width="15%"><a href="updatefair.php">Update Fare Info</a></td>
-				    <td width="15%"><a href="updatetrain.php">Update Train Info</a></td>
+					<td  width="15%"><a href="changepassword.php">Change Password</a></td>
+				    <td width="15%"><a href="updatefair.php">Employee Info</a></td>
+					<td width="15%"><a href="updatetrain.php">Update Train Info</a></td>
 				    <td width="15%"><a href="financial.php">Financial Assessment</a></td>
 				    <td width="20%"><a href="feedback.php">Passenger Feedback</a></td>
 				</tr>
@@ -82,39 +55,39 @@
 				<table border="0">
 					<tr>
 						<td width="150px">Name  </td>
-						<td><?php echo $GLOBALS['$employeeinfo']->name;?></td>
+						<td><?php echo $GLOBALS['$user']->name;?></td>
 					</tr>
 					<tr>
 						<td  width="150px">Employee ID  </td>
-						<td><?php echo $GLOBALS['$employeeinfo']->employee_id;?></td>
+						<td><?php echo $GLOBALS['$user']->employeeid;?></td>
 					</tr>
 					<tr>
 						<td  width="150px">Email ID  </td>
-						<td><?php echo $GLOBALS['$employeeinfo']->email;?></td>
+						<td><?php echo $GLOBALS['$user']->email;?></td>
 					</tr>
 					<tr>
 						<td  width="150px">Mobile No. </td>
-						<td><?php echo $GLOBALS['$employeeinfo']->mobile;?></td>
+						<td><?php echo $GLOBALS['$user']->mobileno;?></td>
 					</tr>
 					<tr>
 						<td  width="150px">Designation </td>
-						<td><?php echo $GLOBALS['$employeeinfo']->designation;?></td>
+						<td><?php echo $GLOBALS['$user']->designation;?></td>
 					</tr>
 					<tr>
 						<td  width="150px">Hired Date </td>
-						<td><?php echo $GLOBALS['$employeeinfo']->hiredate;?></td>
+						<td><?php echo $GLOBALS['$user']->hiredate;?></td>
 					</tr>
 					<tr>
 						<td  width="150px">Salary </td>
-						<td><?php echo $GLOBALS['$employeeinfo']->salary;?></td>
+						<td><?php echo $GLOBALS['$user']->salary;?></td>
 					</tr>
 					<tr>
 						<td  width="150px">Commission </td>
-						<td><?php echo $GLOBALS['$employeeinfo']->commission;?></td>
+						<td><?php echo $GLOBALS['$user']->commission;?></td>
 					</tr>
 					<tr>
 						<td  width="150px">Address </td>
-						<td><?php echo $GLOBALS['$employeeinfo']->address;?></td>
+						<td><?php echo $GLOBALS['$user']->address;?></td>
 					</tr>
 				</table>
 			</fieldset>

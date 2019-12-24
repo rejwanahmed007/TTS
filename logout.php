@@ -1,6 +1,6 @@
 <?php
 
 	
-	setcookie("username", $email, time()-3, "/");
+	setcookie("user", $email, time()-3, "/");
 	header('location: index.php');
 ?>
